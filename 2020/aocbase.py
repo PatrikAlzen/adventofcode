@@ -8,10 +8,9 @@ class AOC():
             self.lines = f.readlines()
 
     @property
-    def input_as_string(self):
+    def as_string(self):
         return [item.strip('\n') for item in self.lines]
-    
-    @property
-    def input_as_int(self):
-        return [int(item) for item in self.lines]
 
+    @property
+    def as_int(self):
+        return [int(item) for item in self.lines]
