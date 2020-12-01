@@ -57,7 +57,7 @@ for combo in combinations:
     if combo[0] + combo[1] == 2020:
         print(f'Part one: {combo[0] * combo[1]}')
         break
-e
+
 combinations = permutations(data.as_int, 3)
 
 for combo in combinations:
