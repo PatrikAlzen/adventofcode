@@ -18,3 +18,7 @@ for case in inp:
             valid += 1
 
 print(f'Part one: {valid}')
+
+valid = [case for case in inp if ((case.password[case.min - 1] == case.letter) ^ (case.password[case.max - 1] == case.letter))]
+
+print(f'Part two: {len(valid)}')
