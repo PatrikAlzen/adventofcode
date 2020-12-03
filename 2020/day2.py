@@ -1,3 +1,4 @@
+from aocbase import AOC
 from collections import namedtuple
 
 data = AOC('2.txt').as_string
