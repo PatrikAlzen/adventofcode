@@ -97,6 +97,7 @@ Fix the program so that it terminates normally by changing exactly one jmp (to n
 of the accumulator after the program terminates?
 """
 
+from aocbase import AOC
 from dataclasses import dataclass
 
 @dataclass
