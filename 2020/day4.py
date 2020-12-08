@@ -124,6 +124,7 @@ Count the number of valid passports - those that have all required fields and va
 optional. In your batch file, how many passports are valid?
 """
 
+from aocbase import AOC
 import re
 
 data = AOC('4.txt').as_string

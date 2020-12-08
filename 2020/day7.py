@@ -71,16 +71,21 @@ import re
 
 data = AOC('7.txt').as_string
 
-graph = {}
 
-for line in data:
-    line = line.replace(' bags', '').replace(' bag', '')
-    bag, contents = line.split(' contain ')
-    if 'no other' in contents:
-        graph[bag] = {}
-    else:
-        contents = contents.replace('.', '').strip()
-        graph[bag] = {item[2:]: int(item[0]) for item in contents.split(', ')}
+def parse(data):
+    result = {}
+    for line in data:
+        line = line.replace(' bags', '').replace(' bag', '')
+        bag, contents = line.split(' contain ')
+        if 'no other' in contents:
+            result[bag] = {}
+        else:
+            contents = contents.replace('.', '').strip()
+            result[bag] = {item[2:]: int(item[0]) for item in contents.split(', ')}
+    return result
+
+
+graph = parse(data)
 
 new_parents = set()
 all_parents = set()

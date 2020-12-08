@@ -61,7 +61,7 @@ What is the ID of your seat?
 
 from aocbase import AOC
 
-data = AOC("2020/5.txt").as_string
+data = AOC("5.txt").as_string
 
 
 def seat_id(row, column):
