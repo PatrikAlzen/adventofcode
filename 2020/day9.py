@@ -91,7 +91,7 @@ What is the encryption weakness in your XMAS-encrypted list of numbers?
 """
 
 from aocbase import AOC, timeit
-from itertools import permutations
+from itertools import combinations
 import functools
 
 data = AOC('9.txt').as_int
@@ -107,7 +107,7 @@ def find_invalid(data, preamble_length):
     index = preamble_length
     while index <= len(data):
         valid = False
-        for combo in permutations(data[index - preamble_length: index], 2):
+        for combo in combinations(data[index - preamble_length: index], 2):
             if calculate(combo[0], combo[1]) == data[index]:
                 valid = True
         if not valid:
