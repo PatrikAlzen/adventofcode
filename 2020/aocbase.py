@@ -1,4 +1,6 @@
 import os
+import time
+
 
 class AOC():
     def __init__(self, filename: str):
@@ -28,3 +30,17 @@ class AOC():
         result.append(group)
         return result
 
+
+def timeit(func):
+    def timed(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        if 'log_time' in kwargs:
+            name = kwargs.get('log_name', func.__name__.upper())
+            kwargs['log_time'][name] = int((end_time - start_time) * 1000)
+        else:
+            print(f'{func.__name__}  {(end_time - start_time) * 1000:.2f} ms')
+        return result
+
+    return timed
